@@ -19,7 +19,10 @@ import {
   GithubIcon,
   Html5Icon,
   JavaScriptIcon,
+  Linkedin01Icon,
+  Mail01Icon,
   SqlIcon,
+  WebProgrammingIcon,
 } from "@hugeicons/core-free-icons";
 import ProjectsPage from "./Projects/ProjectsPage.jsx";
 
@@ -123,12 +126,12 @@ export default function LandingPage() {
             <Card>
                 <CardBody>
                 <Grid placeContent="center">
-                    <HugeiconsIcon size={60} icon={GithubIcon} />
+                    <HugeiconsIcon size={60} icon={WebProgrammingIcon} />
                 </Grid>
-                <CardHeader>Github</CardHeader>
+                <CardHeader>Other Projects</CardHeader>
                 </CardBody>
-            </Card>
-            </Grid>
+            </Card> 
+        </Grid>
         </CardBody>
         </Card>
       </Grid>
@@ -144,7 +147,37 @@ export default function LandingPage() {
             backdropBlur="1rem"
             p="1rem"
         >
-            <Heading>Contact</Heading>
+            <CardHeader pb={0}>
+                <Heading p={0}>Contact me</Heading>
+            </CardHeader>
+            <CardBody>
+                <Grid gridTemplateColumns="1fr 1fr 1fr" gap="1rem">
+                    <Card>
+                        <CardBody>
+                        <Grid placeContent="center">
+                            <HugeiconsIcon size={60} icon={Linkedin01Icon} />
+                        </Grid>
+                        <CardHeader>Linked in</CardHeader>
+                        </CardBody>
+                    </Card>
+                    <Card>
+                        <CardBody>
+                        <Grid placeContent="center">
+                            <HugeiconsIcon size={60} icon={GithubIcon} />
+                        </Grid>
+                        <CardHeader>Github</CardHeader>
+                        </CardBody>
+                    </Card>
+                    <Card>
+                        <CardBody>
+                        <Grid placeContent="center">
+                            <HugeiconsIcon size={60} icon={Mail01Icon} />
+                        </Grid>
+                        <CardHeader>Email</CardHeader>
+                        </CardBody>
+                    </Card>
+                </Grid>
+            </CardBody>
         </Card>
     </Grid>
     </Box>

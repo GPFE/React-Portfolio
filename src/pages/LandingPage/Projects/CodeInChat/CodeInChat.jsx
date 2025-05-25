@@ -76,7 +76,7 @@ export default function CodeInChat() {
         <Heading>CodeInChat</Heading>
       </CardHeader>
       <CardBody height="100%">
-        <Flex flexDirection="column" height="100%" gap="1rem" maxH="100%" overflow="auto">
+        <Flex flexDirection="column" height="80%" gap="1rem" maxH="100%" overflow="auto">
           {messages ? (
             messages.map((message, index) => (
               <Card
@@ -133,6 +133,9 @@ export default function CodeInChat() {
               type="submit"
               borderLeftRadius={0}
               onClick={handleMessageSubmit}
+              _hover={{
+                  bgGradient: "linear(to-r, orange.500, orange.400, yellow.300)"
+              }}
             >
               <HugeiconsIcon icon={SentIcon} />
             </Button>
