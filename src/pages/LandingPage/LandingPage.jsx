@@ -1,5 +1,6 @@
 import {
   Center,
+  Button,
   Box,
   Avatar,
   Card,
@@ -9,6 +10,9 @@ import {
   Text,
   CardBody,
   CardHeader,
+  Highlight,
+  Link,
+  Badge,
 } from "@chakra-ui/react";
 import "./LandingPage.css";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -30,8 +34,17 @@ import ProjectsPage from "./Projects/ProjectsPage.jsx";
 import { ICON_COMPONENTS, RailsIcon } from "./Projects/icons.jsx";
 import React from "react";
 import Navbar from "./Navbar.jsx";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function LandingPage() {
+  const copyEmail = () => {
+      toast.info("📨  Email copied.")
+      navigator.clipboard.writeText("arcd009999@gmail.com", {
+        position: "bottom-right",
+        theme: "dark"
+      })
+  }
+
   const techstackIcons = ICON_COMPONENTS.map((icon, index) => (
       React.createElement(icon, {key: index, size: 80})
   ))
@@ -122,7 +135,9 @@ export default function LandingPage() {
               <CardHeader>
                 <Heading>About Me</Heading>
               </CardHeader>
-              <CardBody>I like programming.</CardBody>
+              <CardBody maxWidth="calc(8rem + 20vw)">
+                  I&rsquo;m a <Link color="purple.700" href="https://rubyonrails.org/">Ruby on Rails</Link> developer who does his best to write clean code and enjoys working with <Link href="https://react.dev/" color="purple.700">React</Link>. I test with <Link href="https://vitest.dev/" color="purple.700">Vitest</Link>, manage databases, and build reliable full-stack applications. Game development using the <Link href="https://defold.com/" color="purple.700">Defold engine</Link> is another hobby of mine.
+              </CardBody>
             </Card>
             <Card
                 mt="1rem"
@@ -141,6 +156,7 @@ export default function LandingPage() {
                         <HugeiconsIcon size={60} icon={GameIcon} />
                     </Grid>
                     <CardHeader>Games</CardHeader>
+                    <Badge fontSize="md">comming soon</Badge>
                     </CardBody>
                 </Card>
                 <Card>
@@ -149,6 +165,7 @@ export default function LandingPage() {
                         <HugeiconsIcon size={60} icon={WebProgrammingIcon} />
                     </Grid>
                     <CardHeader>Other Projects</CardHeader>
+                    <Badge fontSize="md">comming soon</Badge>
                     </CardBody>
                 </Card>
             </Grid>
@@ -177,34 +194,68 @@ export default function LandingPage() {
                 </CardHeader>
                 <CardBody>
                     <Grid gridTemplateColumns="1fr 1fr 1fr" gap="1rem">
-                        <Card>
-                            <CardBody>
-                            <Grid placeContent="center">
-                                <HugeiconsIcon size={60} icon={Linkedin01Icon} />
-                            </Grid>
-                            <CardHeader>Linked in</CardHeader>
-                            </CardBody>
-                        </Card>
-                        <Card>
-                            <CardBody>
-                            <Grid placeContent="center">
-                                <HugeiconsIcon size={60} icon={GithubIcon} />
-                            </Grid>
-                            <CardHeader>Github</CardHeader>
-                            </CardBody>
-                        </Card>
-                        <Card>
-                            <CardBody>
-                            <Grid placeContent="center">
-                                <HugeiconsIcon size={60} icon={Mail01Icon} />
-                            </Grid>
-                            <CardHeader>Email</CardHeader>
-                            </CardBody>
-                        </Card>
+                          <Card _hover={{transform: "scale(1.1)"}} transition=".1s ease-in-out">
+                              <CardBody>
+                              <Grid placeContent="center">
+                                  <HugeiconsIcon size={60} icon={Linkedin01Icon} />
+                              </Grid>
+                              <CardHeader>Linked in</CardHeader>
+                              <Link
+                                href="https://www.linkedin.com/in/arnošt-havelka-70710b252"
+                              >
+                                <Button
+                                  backgroundColor="gray.300"
+                                  backdropFilter="auto"
+                                  backdropBlur="1rem"
+                                  _hover={{
+                                    bgGradient: "linear(to-r, purple.400, blue.300)"
+                                  }}
+                                  >open</Button>
+                              </Link>
+                              </CardBody>
+                          </Card>
+                          <Card _hover={{transform: "scale(1.1)"}} transition=".1s ease-in-out">
+                              <CardBody>
+                              <Grid placeContent="center">
+                                  <HugeiconsIcon size={60} icon={GithubIcon} />
+                              </Grid>
+                              <CardHeader>Github</CardHeader>
+                              <Link
+                                href="https://github.com/GPFE"
+                              >
+                                <Button
+                                  backgroundColor="gray.300"
+                                  backdropFilter="auto"
+                                  backdropBlur="1rem"
+                                  _hover={{
+                                    bgGradient: "linear(to-r, purple.400, blue.300)"
+                                  }}
+                                  >open</Button>
+                              </Link>
+                              </CardBody>
+                          </Card>
+                          <Card _hover={{transform: "scale(1.1)"}} transition=".1s ease-in-out">
+                              <CardBody>
+                              <Grid placeContent="center">
+                                  <HugeiconsIcon size={60} icon={Mail01Icon} />
+                              </Grid>
+                              <CardHeader>Email</CardHeader>
+                              <Button
+                                backgroundColor="gray.300"
+                                backdropFilter="auto"
+                                backdropBlur="1rem"
+                                onClick={copyEmail}
+                                _hover={{
+                                  bgGradient: "linear(to-r, purple.400, blue.300)"
+                                }}
+                                >copy</Button>
+                              </CardBody>
+                          </Card>
                     </Grid>
                 </CardBody>
             </Card>
           </Grid>
+          <ToastContainer autoClose={3000} position="bottom-right" />
         </section>
     </Grid>
     </Box>
