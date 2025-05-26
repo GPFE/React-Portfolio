@@ -60,8 +60,8 @@ export default function CodeInChat() {
       {
         content: message,
         sender_id: 1,
-        created_at: "2025-05-18T12:41:38.335Z",
-        updated_at: "2025-05-18T12:41:38.335Z",
+        created_at: (new Date).toISOString(),
+        updated_at: (new Date).toISOString(),
         receivable_id: 2,
         receivable_type: "User",
         stepper_cards: [],
@@ -76,7 +76,7 @@ export default function CodeInChat() {
         <Heading>CodeInChat</Heading>
       </CardHeader>
       <CardBody height="100%">
-        <Flex flexDirection="column" height="80%" gap="1rem" maxH="100%" overflow="auto">
+        <Flex flexDirection="column" height="80%" gap="1rem" maxH="75%" overflow="auto">
           {messages ? (
             messages.map((message, index) => (
               <Card
@@ -121,6 +121,8 @@ export default function CodeInChat() {
           background="none"
           borderRadius="1rem"
           boxShadow="0 1px 3px 2px rgba(0, 0, 0, 0.1)"
+          as="form"
+          onSubmit={handleMessageSubmit}
         >
           <InputLeftAddon p="0">{/* add attachment button */}</InputLeftAddon>
           <Input
@@ -132,7 +134,6 @@ export default function CodeInChat() {
             <Button
               type="submit"
               borderLeftRadius={0}
-              onClick={handleMessageSubmit}
               _hover={{
                   bgGradient: "linear(to-r, orange.500, orange.400, yellow.300)"
               }}

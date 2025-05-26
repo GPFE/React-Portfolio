@@ -69,7 +69,7 @@ export default function LandingPage() {
             >
                 <Grid placeContent="center"
                 >
-                  <Avatar size="2xl" src="../../public/pictures/arnošt_havelka.jpg" />
+                  <Avatar size="2xl" src="/pictures/arnošt_havelka.jpg" />
                 </Grid>
                 <Heading as="h1" pt="1rem">
                   Arnošt Havelka
