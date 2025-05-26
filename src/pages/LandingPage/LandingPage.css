@@ -6,3 +6,8 @@
 .intro-page > * {
   scroll-snap-align: start;
 }
+
+.intro-page > * > * {
+  max-width: 1280px;
+  margin: 0 auto;
+}

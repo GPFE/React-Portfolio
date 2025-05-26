@@ -42,7 +42,7 @@ export default function ShoppingCart() {
                 <CardHeader>
                     <Heading>Shopping Cart</Heading>
                 </CardHeader>
-                <CardBody height="90%" overflow="auto">
+                <CardBody height="85%" overflow="auto">
                     <Card>
                         <CardBody>
                             <Flex justifyContent="center" gap="1rem">
