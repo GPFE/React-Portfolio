@@ -10,20 +10,8 @@ import {
 import CodeInChat from "./CodeInChat/CodeInChat";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import "./ProjectsPage.css"
-import { useEffect } from "react";
 
 export default function ProjectsPage() {
-  
-  useEffect(() => {
-    const hash = window.location.hash
-
-    if (hash) {
-      const el = document.querySelector(hash);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
-
-
   return (
     <Grid
         bgGradient="linear(to-r, red.400, orange.300)"

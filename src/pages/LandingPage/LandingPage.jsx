@@ -35,8 +35,18 @@ import { ICON_COMPONENTS, RailsIcon } from "./Projects/icons.jsx";
 import React from "react";
 import Navbar from "./Navbar.jsx";
 import { toast, ToastContainer } from "react-toastify";
+import { useEffect } from "react";
 
 export default function LandingPage() {
+  useEffect(() => {
+    const hash = window.location.hash || "#home"
+
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   const copyEmail = () => {
       toast.info("📨  Email copied.")
       navigator.clipboard.writeText("arcd009999@gmail.com", {
