@@ -54,7 +54,8 @@ export default function CodeInChat() {
   const receiver_id = 2;
   const isLoading = false;
 
-  const handleMessageSubmit = () => {
+  const handleMessageSubmit = (e) => {
+    e.preventDefault()
     setMessages([
       ...messages,
       {
