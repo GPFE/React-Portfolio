@@ -97,7 +97,7 @@ export default function LandingPage() {
         // bgGradient="linear(to-r, blue.400, teal.300)"
         bgGradient="linear(to-r, red.400, orange.300)"
         height={isWiderThan800 ? "100vh" : ""}
-        py="1rem"
+        p="1rem"
         >
         <section id="techstack">
           <Grid
@@ -138,8 +138,9 @@ export default function LandingPage() {
       >
         <section id="about">
           <Grid
-        height={isWiderThan800 ? "100vh" : ""}
-              placeContent="center"
+            height={isWiderThan800 ? "100vh" : ""}
+            placeContent="center"
+            p="1rem"
           >
             <Card
                 backgroundColor="whiteAlpha.700"
@@ -165,7 +166,7 @@ export default function LandingPage() {
                 <Heading p={0}>Learn more</Heading>
             </CardHeader>
             <CardBody>
-                <Grid gridTemplateColumns="1fr 1fr" gap="1rem">
+                <Grid gridTemplateColumns={isWiderThan800 ? "1fr 1fr" : ""} gap="1rem">
                 <Card>
                     <CardBody>
                     <Grid placeContent="center">
@@ -197,13 +198,13 @@ export default function LandingPage() {
           <Grid
             height={isWiderThan800 ? "100vh" : ""}
             placeContent="center"
+            p="1rem"
           >
             <Card
                 mt="1rem"
                 backgroundColor="whiteAlpha.700"
                 backdropFilter="auto"
                 backdropBlur="1rem"
-                p="1rem"
             >
                 <CardHeader pb={0}>
                     <Heading p={0}>Contact me</Heading>
