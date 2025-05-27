@@ -1,10 +1,12 @@
-.intro-page {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
-
-.intro-page > * {
-  scroll-snap-align: start;
+@media (min-width: 800px) {
+  .intro-page {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  }
+  
+  .intro-page > * {
+    scroll-snap-align: start;
+  }
 }
 
 .intro-page > * > * {
