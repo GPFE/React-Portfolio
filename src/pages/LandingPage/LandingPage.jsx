@@ -13,6 +13,7 @@ import {
   Highlight,
   Link,
   Badge,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import "./LandingPage.css";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -38,6 +39,8 @@ import { toast, ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 
 export default function LandingPage() {
+  const [isWiderThan800] = useMediaQuery('(min-width: 800px)')
+
   useEffect(() => {
     const hash = window.location.hash || "#home"
 
@@ -93,11 +96,12 @@ export default function LandingPage() {
       <Grid
         // bgGradient="linear(to-r, blue.400, teal.300)"
         bgGradient="linear(to-r, red.400, orange.300)"
-        height="100vh"
+        height={isWiderThan800 ? "100vh" : ""}
+        py="1rem"
         >
         <section id="techstack">
           <Grid
-            height="100vh"
+            height={isWiderThan800 ? "100vh" : ""}
             placeContent="center">
             <Card
               backdropBlur="1rem"
@@ -130,10 +134,11 @@ export default function LandingPage() {
       </Grid>
       <Grid
         bgGradient="linear(to-r, purple.400, blue.300)"
+        py="1rem"
       >
         <section id="about">
           <Grid
-        height="100vh"
+        height={isWiderThan800 ? "100vh" : ""}
               placeContent="center"
           >
             <Card
@@ -141,6 +146,7 @@ export default function LandingPage() {
                 backdropFilter="auto"
                 backdropBlur="1rem"
                 p="1rem 2rem"
+                alignItems="center"
             >
               <CardHeader>
                 <Heading>About Me</Heading>
@@ -189,7 +195,7 @@ export default function LandingPage() {
     >
         <section id="contact">
           <Grid
-            height="100vh"
+            height={isWiderThan800 ? "100vh" : ""}
             placeContent="center"
           >
             <Card
@@ -203,7 +209,7 @@ export default function LandingPage() {
                     <Heading p={0}>Contact me</Heading>
                 </CardHeader>
                 <CardBody>
-                    <Grid gridTemplateColumns="1fr 1fr 1fr" gap="1rem">
+                    <Grid gridTemplateColumns={isWiderThan800 ? "1fr 1fr 1fr" : "1fr 1fr"} gap="1rem">
                           <Card _hover={{transform: "scale(1.1)"}} transition=".1s ease-in-out">
                               <CardBody>
                               <Grid placeContent="center">

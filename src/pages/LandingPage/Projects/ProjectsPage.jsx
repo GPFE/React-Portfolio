@@ -10,8 +10,11 @@ import {
 import CodeInChat from "./CodeInChat/CodeInChat";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import "./ProjectsPage.css"
+import { useMediaQuery } from "@chakra-ui/react";
 
 export default function ProjectsPage() {
+  const [isWiderThan800] = useMediaQuery('(min-width: 800px)')
+
   return (
     <Grid
         bgGradient="linear(to-r, red.400, orange.300)"
@@ -19,9 +22,9 @@ export default function ProjectsPage() {
     >
       <section id="projects" style={{width: "100%"}}>
       <Grid
-        height="100vh"
+        height={isWiderThan800 ? "100vh" : ""}
         className="projects"
-        p="3rem 2rem"
+        p={isWiderThan800 ? "3rem 2rem" : "2rem 1rem"}
         pt="5rem"
         minHeight={0}
       >
@@ -30,8 +33,8 @@ export default function ProjectsPage() {
             backgroundColor="whiteAlpha.700"
             backdropFilter="auto"
             borderRadius="1rem 2rem"
-            p="2rem"
-            height="100%"
+            p={isWiderThan800 ? "2rem" : "1rem"}
+            height={isWiderThan800 ? "100%" : ""}
             width="100%"
             display="flex"
             flexDirection="column"
@@ -45,24 +48,24 @@ export default function ProjectsPage() {
               <Heading as="h2">Projects</Heading>
             </CardHeader>
             <CardBody
-              height="100%"
+              height={isWiderThan800 ? "100%" : ""}
               p={0}
               display="flex"
               flexDirection="column"
               minHeight={0}
             >
               <Grid
-                height="100%"
+                height={isWiderThan800 ? "100%" : ""}
                 pt="1rem"
                 gap="1rem"
-                templateColumns="1fr 1fr"
+                templateColumns={isWiderThan800 ? "1fr 1fr" : ""}
                 templateRows="1fr"
                 minHeight={0}
               >
-                <GridItem height="100%" minHeight={0}>
+                <GridItem height={isWiderThan800 ? "100%" : ""}  minHeight={0}>
                   <CodeInChat />
                 </GridItem>
-                <GridItem height="100%" minHeight={0}>
+                <GridItem height={isWiderThan800 ? "100%" : ""} minHeight={0}>
                   <ShoppingCart />
                 </GridItem>
               </Grid>
