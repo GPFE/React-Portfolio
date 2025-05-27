@@ -108,13 +108,16 @@ export default function LandingPage() {
               backgroundColor="whiteAlpha.700"
               backdropFilter="auto"
             >
-              <CardBody>
+              <CardBody
+                minWidth="calc(14rem + 30vw)"
+                maxWidth="40rem"
+              >
                 <CardHeader
                   backgroundColor="white"
                   borderRadius=".5rem"
                   mb="1rem"
                 >
-                  <Heading px="calc(1rem + 20vw)">Techstack</Heading>
+                  <Heading textAlign="center">Techstack</Heading>
                 </CardHeader>
                     <Grid gap="1rem" gridTemplateColumns="repeat(auto-fill, minmax(6rem, 1fr))">
                       {techstackIcons.map(

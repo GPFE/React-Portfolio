@@ -1,7 +1,7 @@
 import { Link } from "react-router"
 import { Box, Flex, Grid, PopoverContent, PopoverTrigger, Popover, Card, CardBody, Button, Text } from "@chakra-ui/react"
 import { HugeiconsIcon } from "@hugeicons/react"
-import { Book02Icon, BookOpen02Icon, Contact01Icon, Home01Icon, MenuSquareIcon, MoreHorizontalIcon, MoreIcon, SourceCodeSquareIcon } from "@hugeicons/core-free-icons"
+import { Atom01Icon, Book02Icon, BookOpen02Icon, Contact01Icon, Home01Icon, MenuSquareIcon, MoreHorizontalIcon, MoreIcon, NanoTechnologyIcon, SourceCodeSquareIcon } from "@hugeicons/core-free-icons"
 import NavItem from "./NavItem"
 
 export default function Navbar() {
@@ -73,6 +73,12 @@ export default function Navbar() {
                             icon={SourceCodeSquareIcon}
                         >
                             Projects
+                        </NavItem>
+                        <NavItem
+                            href="#techstack"
+                            icon={Atom01Icon}
+                        >
+                            Techstack
                         </NavItem>
                         <NavItem
                             href="#about"
